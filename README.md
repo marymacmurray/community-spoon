@@ -1,6 +1,30 @@
 # community-spoon
 
-<!-- Headings -->
+## Description
+4 to 5 sentences summarizing the features, functions, and goals.
+
+## Wireframes
+
+# mobile
+![this is my mobile mockup](mockups/community-spoon-flowmap.png)
+# tablet
+![this is my tablet mockup](mockups/community-spoon-laptop-flowmap.png)
+# web
+![this is my tablet mockup](mockups/community-spoon-tablet-flowmap.png)
+
+## mvp goals
+
+
+## API: 
+
+MVP: Write out what your goals are for MVP, including the minimum, need-to-have features of your app.
+Post-MVP: Write out what your goals are for post-MVP, including nice-to-have features that you would like to implement once your MVP is complete.
+Eventually I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users in the app, building a 3-course meal based on what people can bring and their dietary preferences/location.
+
+### Functions:
+### Goals:
+
+
 # live site here: [site]
 
 # TO DO!
@@ -15,7 +39,7 @@
 * html5
 * css
 
-### approach
+
 
 #### relevant instructions for viewers
 
