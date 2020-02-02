@@ -1,31 +1,38 @@
-# community-spoon
+# community-spoon (site link)
+
 
 ## Description
-4 to 5 sentences summarizing the features, functions, and goals.
+Generate random users based on location who can bring appetizers, entrees, and desserts to build a dinner party.
 
 ## Wireframes
 
-# mobile
+### mobile
 ![this is my mobile mockup](mockups/community-spoon-flowmap.png)
-# tablet
+### tablet
 ![this is my tablet mockup](mockups/community-spoon-laptop-flowmap.png)
-# web
+### web
 ![this is my tablet mockup](mockups/community-spoon-tablet-flowmap.png)
 
 ## mvp goals
 
+Functional Requirements
+* Be built with HTML, CSS, and JavaScript.
+* Use Axios to consume data from an external source, and render that data into the DOM.
+* Use flexbox (display: flex) or grid.
+* Implement responsive design on 3 screen sizes (including desktop) using 2 media queries (tablet and mobile).
+* Host on Surge.
+
+Procedural Requirements
+* Have GitHub commits (documenting good progress) every day.
+* Have a well-developed README.md file explaining technologies used, approaches taken, a link to my live site, relevant instructions for viewers, and any unsolved problems.
 
 ## API: 
+https://randomuser.me/api/?
 
-MVP: Write out what your goals are for MVP, including the minimum, need-to-have features of your app.
-Post-MVP: Write out what your goals are for post-MVP, including nice-to-have features that you would like to implement once your MVP is complete.
-Eventually I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users in the app, building a 3-course meal based on what people can bring and their dietary preferences/location.
+## post-mvp goals: 
 
-### Functions:
-### Goals:
-
-
-# live site here: [site]
+* Fancier use of grid. 
+* Eventually (perhaps not in the scope of this course) I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users in the app, building a 3-course meal based on what people can bring and their dietary preferences/location.  This would require login, test users, etc.  
 
 # TO DO!
 <!-- Task List -->
@@ -44,74 +51,9 @@ Eventually I would like Community Spoon to be similar to if meetup.com and airbn
 #### relevant instructions for viewers
 
 ##### wip
-
-###### heading 6
 ​
-<!-- Italics -->
-*This text* is italic
-​
-_This text_ is italic
-​
-<!-- Strong -->
-**This text** is italic
-​
-__This text__ is italic
-​
-<!-- Strikethrough -->
-~~This text~~ is strikethrough
-​
-<!-- Horizontal Rule -->
-​
----
-___
-​
-<!-- Blockquote -->
-> This is a quote
-<!-- Links -->
-[Traversy Media](http://www.traversymedia.com)
-​
-[Traversy Media](http://www.traversymedia.com "Traversy Media")
-​
-<!-- UL -->
-* Item 1
-* Item 2
-* Item 3
-  * Nested Item 1
-  * Nested Item 2
-​
-<!-- OL -->
-1. Item 1
-1. Item 2
-1. Item 3
-​
-<!-- Inline Code Block -->
-`<p>This is a paragraph</p>`
-​
-<!-- Images -->
-![Markdown Logo](https://markdown-here.com/img/icon256.png)
-​
-<!-- Github Markdown -->
-​
-<!-- Code Blocks -->
-```bash
-  npm install
-  npm start
-```
-​
-```javascript
-  function add(num1, num2) {
-    return num1 + num2;
-  }
-```
-​
-```python
-  def add(num1, num2):
-    return num1 + num2
-```
-​
-<!-- Tables -->
-| Name     | Email          |
-| -------- | -------------- |
-| John Doe | john@gmail.com |
-| Jane Doe | jane@gmail.com |
+| to do    | doing          |  done          |
+| -------- | -------------- | -------------- |
+|          |                |                |
+|          |                |                |
 ​
