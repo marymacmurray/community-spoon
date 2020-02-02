@@ -1,0 +1,165 @@
+/* GENERAL STYLES */
+
+/* FONTS */
+  /* headers:
+      /* font-family: 'Karla', sans-serif; */
+  /* regular text */
+      /* font-family: 'Lora', serif; */
+
+/* COLORS */
+  /* dark blue for some texts and backgrounds = #000033 */
+  /* white / lightblue gradient background = linear-gradient(to right, white, lightblue) */
+body{
+  color:#000033;
+  background-color: white;
+  font-family:'Lora', serif;
+}
+
+header{
+  background:linear-gradient(to right, white, lightblue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Karla'; sans-serif;
+}
+
+#logo{
+  height:100px; 
+  width:100px;
+  /* transform: rotate(90deg); */
+}
+#home-link{
+  align-self: center;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+a{
+
+}
+h1{
+
+}
+#hero-image{
+  width: 100%;
+}
+button{
+  background-color:rgb(8, 148, 66);
+  color: white;
+}
+#user-info{
+  /* display:flex; */
+}
+#userImg{
+  border-radius: 100px;
+}
+#userLocation{
+  color: black;
+  text-align: center;
+}
+main{
+  text-align: center;
+}
+#hero-section{
+  background:linear-gradient(to right, white, lightblue);
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+}
+#hero-text{
+  color:#000033;
+}
+#pic-section{
+  object-fit: cover;/* you may want to try using object-fit:cover; */
+}
+#pic-gallery{
+  /* height: 90vh;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; */
+  background:linear-gradient(to right, white, lightblue);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
+  box-orient: horizontal;
+  box-pack: center;
+  box-align: center;
+  padding: 10px;
+}
+img{
+  width: auto;
+  height: auto;
+  /* margin: 5px;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding: 4rem; */
+
+}
+#vid-section{
+background-color: red;
+}
+
+#vid-gallery {
+  display: flex;
+  background: linear-gradient(to right, white, lightblue);
+  padding: 20px 0 20px 0;
+}
+
+.video {
+  width: 48%;
+  margin: 0 auto;
+}
+
+/* copied video responsive from https://www.ostraining.com/blog/coding/responsive-videos/ */
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+#review-section{
+  background-color:;
+  
+  }
+#reviews{
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.reviewer{
+height: 100 px;
+width: 200 px;
+}
+
+footer{
+  text-align: center;
+}
+#contact-section{
+background-color: orange;
+}
+
+
+
+/* try.html page */
+
