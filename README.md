@@ -52,8 +52,8 @@ https://randomuser.me/api/?
 
 ##### wip
 ​
-| to do    | doing          |  done          |
-| -------- | -------------- | -------------- |
-|          |                |                |
-|          |                |                |
+| to do                | doing          |  done          |
+| -------------------- | -------------- | -------------- |
+| put something in here|                |                |
+|                      |                |                |
 ​
