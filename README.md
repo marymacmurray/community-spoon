@@ -1,17 +1,27 @@
 # community-spoon
 
 <!-- Headings -->
+# live site here: [site]
+
 # TO DO!
 <!-- Task List -->
 * [x] Choose API data source
 * [x] Create Mockup
 * [ ]  Refine CSS
 
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+## technologies used
+* vanilla javascript
+* axios
+* html5
+* css
+
+### approach
+
+#### relevant instructions for viewers
+
+##### wip
+
+###### heading 6
 ​
 <!-- Italics -->
 *This text* is italic
