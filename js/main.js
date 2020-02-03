@@ -3,6 +3,7 @@ const BASE_URL = 'https://randomuser.me/api/';
 const dropdown = document.querySelector('#userselect');
 const tryMebutton = document.querySelector('#try-me');
 const userDisplay = document.querySelector('#user-info');
+const cuisineDropdown = document.querySelector('#cuisine-button');
 
 
 let users = async () => {
