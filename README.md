@@ -2,7 +2,7 @@
 
 
 ## Description
-Generate random users based on location who can bring appetizers, entrees, and desserts to build a dinner party.
+Generate users based on location who can bring appetizers, entrees, and desserts to build a dinner party.
 
 ## Wireframes
 
