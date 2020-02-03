@@ -32,6 +32,7 @@ https://randomuser.me/api/?
 ## post-mvp goals: 
 
 * Fancier use of grid. 
+* Add 2 more APIs to enable search by cuisine or food.  "Need ideas for what's in your fridge?" then addeventlistener with dropdown based on food string or cuisine string.
 * Eventually (perhaps not in the scope of this course) I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users in the app, building a 3-course meal based on what people can bring and their dietary preferences/location.  This would require login, test users, etc.  
 
 # TO DO!
