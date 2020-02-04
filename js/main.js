@@ -6,28 +6,36 @@ const userDisplay = document.querySelector('#user-info');
 const cuisineDropdown = document.querySelector('#cuisine');
 const cuisineSelectbutton = document.querySelector('#cuisine-select-button')
 
-const MEALSDB_URL = 'https://www.themealdb.com/api/json/v1/1/random.php'
+const MEALSDB_URL = 'https://www.themealdb.com/api/json/v2/'
+const MEALSDB_API_KEY = '9973533/'
 
 let meals = async () => {
-  await axios.get(`${MEALSDB_URL}`)
+  await axios.get(`${MEALSDB_URL}${MEALSDB_API_KEY}list.php?a=list`)
     .then(res => {
       console.log(res);
-      const cuisine = res.data.meals[0].strArea;
+      const cuisine = res.data.meals;
       console.log(cuisine)
       for (let i = 0; i < cuisine.length; i++) {
-        dropdown.innerHTML += `<option id=${cuisine[i]}>${cuisine[i]}</option>`
+        cuisineDropdown.innerHTML += `<option id=${cuisine[i].strArea}>${cuisine[i].strArea}</option>`
       }
     })
     .catch(error => {
       console.log(error);
     })
 }
+
+// cuisineSelectbutton.addEventListener('click', async () => {
+//   const cuisineCategory = cuisineDropdown[cuisineDropdown.selectedIndex].value;
+//   try {
+//     const response = await axios.get(`${MEALSDB_URL}`)
+//       .then(res => {
+//         console.log(res);
+//       })
+//   } .catch(error => {
+//     console.log(error);
+//   })
+// })
 meals();
-
-cuisineSelectbutton.addEventListener('click', async () => {
-  const cuisineCategory = cuisineDropdown.options[cuisineDropdown.selectedIndex].value;
-
-})
 
 let users = async () => {
   await axios.get(`${BASE_URL}`)
