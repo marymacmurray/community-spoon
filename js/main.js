@@ -30,7 +30,8 @@ allCuisinetypes();
 const getMealbyId = async (id) => {
   let mealResponse =
     await axios.get(`https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${id}`)
-  console.log(mealResponse);
+  return mealResponse
+  // console.log(mealResponse);
 }
 
 cuisineSelectbutton.addEventListener('click', async () => {
@@ -40,12 +41,18 @@ cuisineSelectbutton.addEventListener('click', async () => {
   let response = await axios.get(`${MEALSDB_URL}${MEALSDB_API_KEY}filter.php?a=${cuisineTypeSelected}`)
     .then(meals => {
       let res = meals.data.meals
-      let cuisinedMeals = res.map(meal => {
+      let cuisinedMeals = res.map(async (meal) => {
         // console.log(meal.idMeal)
-        getMealbyId(meal.idMeal)
+        let info = await getMealbyId(meal.idMeal)
+        console.log(info)
         let newDiv = document.createElement("div")
-        newDiv.innerHTML = `<h3>${meal.strMeal}</h3><img src="${meal.strMealThumb}" alt="${meal.strMeal} recipe photo" width="300" height="200">`
+        newDiv.innerHTML =
+          `<h1>${info.data.meals[0].strMeal}</h1>
+          <a href="${info.data.meals[0].strYoutube}" target="_blank">
+          <img src="${info.data.meals[0].strMealThumb}" target="_blank" alt="${meal.strMeal} recipe photo" width="300" height="200"></a>`
+        //   <h2>${meal.strInstructions}</h2>
         // console.log(newDiv.innerHTML)
+
         document.querySelector("#videoZone").appendChild(newDiv)
       })
       // console.log(cuisinedMeals)

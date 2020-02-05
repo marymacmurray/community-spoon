@@ -8,7 +8,7 @@ body {
   display: grid;
   font-family:'Lora', serif;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10% 1fr 10%;
+  grid-template-rows: 80px 1fr 40px;
 }
 header {
   grid-column-start: 1;
@@ -35,14 +35,15 @@ a{
 }
 main{
   display:grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 10px;
   /* background-color: yellow; */
   grid-column-start: 1;
   grid-column-end:3;
 }
 #hero-section{
-  background-image:url(../images/hero-image.jpeg);
+  background-image:url(../images/hero-image2.jpg);
+  /* background-position: top; */
   background-size: cover;
   display:flex;
   grid-column-start: 1;
@@ -50,8 +51,8 @@ main{
   justify-content: center;
 }
 #hero-text{
-  color:#010322 !important;
-  margin: auto;
+  color:#010322;
+  margin: 100px auto;
   /* grid-column-start: 2;
   grid-column-end:3; */
 }
