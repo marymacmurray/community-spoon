@@ -44,9 +44,8 @@ cuisineSelectbutton.addEventListener('click', async () => {
         // console.log(meal.idMeal)
         getMealbyId(meal.idMeal)
         let newDiv = document.createElement("div")
-        // newDiv.classList.add("video-responsive")
-        newDiv.innerHTML = `<h3>${meal.strMeal}</h3><img src="${meal.strMealThumb}" alt="${meal.strMeal} recipe photo" width="300" height="200"></a>`
-        console.log(newDiv.innerHTML)
+        newDiv.innerHTML = `<h3>${meal.strMeal}</h3><img src="${meal.strMealThumb}" alt="${meal.strMeal} recipe photo" width="300" height="200">`
+        // console.log(newDiv.innerHTML)
         document.querySelector("#videoZone").appendChild(newDiv)
       })
       // console.log(cuisinedMeals)
