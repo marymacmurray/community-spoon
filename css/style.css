@@ -73,16 +73,28 @@ article {
   background-color:rgb(8, 148, 66);
   color: white;
 }
-#userLocation{
+/* #userLocation{
   color: black;
   text-align: center;
-}
+} */
 #cuisine-button{
 
 }
 #videoZone{
   text-align: center;
   border-radius: 25px;
+}
+.mealDiv{
+
+}
+.mealDivimg{
+  border-radius: 25%;
+}
+.userDiv{
+
+}
+.userDivimg{
+  
 }
 
 footer {

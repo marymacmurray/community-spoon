@@ -1,8 +1,5 @@
-// NO API required for Axios calls.
-const BASE_URL = 'https://randomuser.me/api/?results=5000&?inc=name,location,picture';
-const dropdown = document.querySelector('#userselect');
-const userSelectbutton = document.querySelector('#user-select-button');
-const userDisplay = document.querySelector('#user-info');
+//**************Click event listener generating list of Meals by Cuisine Type************** */
+
 const cuisineDropdown = document.querySelector('#cuisine');
 const cuisineSelectbutton = document.querySelector('#cuisine-select-button')
 const videoZone = document.querySelector('#videoZone')
@@ -44,12 +41,16 @@ cuisineSelectbutton.addEventListener('click', async () => {
       let cuisinedMeals = res.map(async (meal) => {
         // console.log(meal.idMeal)
         let info = await getMealbyId(meal.idMeal)
-        console.log(info)
+        // console.log(info)
         let newDiv = document.createElement("div")
+        newDiv.classList.add("mealDiv")
+        newDiv.addEventListener('click', () => {
+          build3courses(info.data.meals[0], info)
+        })
         newDiv.innerHTML =
           `<h1>${info.data.meals[0].strMeal}</h1>
           <a href="${info.data.meals[0].strYoutube}" target="_blank">
-          <img src="${info.data.meals[0].strMealThumb}" target="_blank" alt="${meal.strMeal} recipe photo" width="300" height="200"></a>`
+          <img src="${info.data.meals[0].strMealThumb}" class="mealDivimg" target="_blank" alt="${meal.strMeal} recipe photo" width="300" height="200"></a>`
         //   <h2>${meal.strInstructions}</h2>
         // console.log(newDiv.innerHTML)
 
@@ -64,8 +65,81 @@ cuisineSelectbutton.addEventListener('click', async () => {
 )
 allCuisinetypes();
 
+//*****identify selected meal category, if/else to choose complimentary meal photos*****/
 
-//*******RandomUsers API calls. DON'T TOUCH BELOW THIS LINE!*********
+function build3courses(selectedMeal, info) {
+  // console.log(selectedMeal);
+  if (selectedMeal.strCategory === "Dessert")//Dessert
+  {
+    const listNotdessert = info.filter(meal => info.strCategory !== "Dessert");
+    console.log(listNotdessert);
+  }
+  else if (selectedMeal.strCategory === "Starter" || selectedMeal.strCategory === "Side")  //Appetizer
+  {
+    const listNotstarter = info.filter(meal => info.strCategory !== "Starter");
+    console.log(listNotstarter);
+  }
+  else if (selectedMeal.strCategory === "Breakfast")//Breakfast
+  {
+    const listIsbreakfast = info.filter(meal => info.strCategory === "Breakfast");
+    console.log(listIsbreakfast);
+  }
+  else {
+    const listNotEntree = info.filter(meal => info.strCategory !== "Beef" || info.strCategory !== "Chicken" || info.strCategory !== "Goat" || info.strCategory !== "Lamb" || info.strCategory !== "Miscellaneous" || info.strCategory !== "Pasta" || info.strCategory !== "Pork" || info.strCategory !== "Seafood" || info.strCategory !== "Vegan" || info.strCategory !== "Vegetarian");
+    console.log(listNotEntree);
+  };
+  return build3courses();
+}
+//******This is the list of strCategory values from the API, these are like dish types.*** */
+    // "strCategory": "Breakfast"
+
+    // "strCategory": "Beef"
+    // "strCategory": "Chicken"
+    // "strCategory": "Goat"
+    // "strCategory": "Lamb"
+    // "strCategory": "Miscellaneous"
+    // "strCategory": "Pasta"
+    // "strCategory": "Pork"
+    // "strCategory": "Seafood"
+    // "strCategory": "Vegan"
+    // "strCategory": "Vegetarian"
+
+    // "strCategory": "Side"
+    // "strCategory": "Starter"
+
+  // "strCategory": "Dessert"
+
+//********Hard code randomuser photos and name******/
+
+// const randomUser_BASE_URL = 'https://randomuser.me/api/?results=2&?inc=name,location,picture';
+// const dropdown = document.querySelector('#userselect');
+// const userDisplay = document.querySelector('#user-info');
+
+
+// selectedMealdiv.addEventListener('click', async () => {
+//   let users = await axios.get(`${randomUser_BASE_URL}`)
+//     .then(res => {
+//       console.log(res);
+//       // let user = res.data.results[0];
+//       // let userDiv = document.createElement("div")
+//       // console.log(userDiv);
+//       // userDiv.classList.add("userDiv")
+//       // userDiv.innerHTML =
+//       //   `<img src="${user.picture.large}" class="userDivimg" target="_blank" alt="$user photo" width="300" height="200">
+//       //   <h1>${user.name.first}</h1>`
+//       // document.querySelector("#userinfo").appendChild(userDiv)
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     })
+// }
+// )
+
+// addEventListener
+// if strCategory of selected meal
+
+
+//*******RandomUser generated on click*********
 
 
 // let users = async () => {
