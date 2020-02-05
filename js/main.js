@@ -5,6 +5,7 @@ const userSelectbutton = document.querySelector('#user-select-button');
 const userDisplay = document.querySelector('#user-info');
 const cuisineDropdown = document.querySelector('#cuisine');
 const cuisineSelectbutton = document.querySelector('#cuisine-select-button')
+const videoZone = document.querySelector('#videoZone')
 
 const MEALSDB_URL = 'https://www.themealdb.com/api/json/v2/'
 const MEALSDB_API_KEY = '9973533/'
@@ -29,7 +30,7 @@ allCuisinetypes();
 const getMealbyId = async (id) => {
   let mealResponse =
     await axios.get(`https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${id}`)
-  console.log(mealResponse)
+  console.log(mealResponse);
 }
 
 cuisineSelectbutton.addEventListener('click', async () => {
@@ -42,9 +43,13 @@ cuisineSelectbutton.addEventListener('click', async () => {
       let cuisinedMeals = res.map(meal => {
         // console.log(meal.idMeal)
         getMealbyId(meal.idMeal)
+        let newDiv = document.createElement("div")
+        // newDiv.classList.add("video-responsive")
+        newDiv.innerHTML = `<h3>${meal.strMeal}</h3><img src="${meal.strMealThumb}" alt="${meal.strMeal} recipe photo" width="300" height="200"></a>`
+        console.log(newDiv.innerHTML)
+        document.querySelector("#videoZone").appendChild(newDiv)
       })
       // console.log(cuisinedMeals)
-
     }
     ).catch(error => {
       console.log(error);
@@ -52,6 +57,7 @@ cuisineSelectbutton.addEventListener('click', async () => {
 }
 )
 allCuisinetypes();
+
 
 //*******RandomUsers API calls. DON'T TOUCH BELOW THIS LINE!*********
 
