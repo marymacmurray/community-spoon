@@ -27,7 +27,7 @@ Procedural Requirements
 * Have a well-developed README.md file explaining technologies used, approaches taken, a link to my live site, relevant instructions for viewers, and any unsolved problems.
 
 ## API: 
-https://www.themealdb.com/api/json/v2
+https://www.themealdb.com/
 
 ## post-mvp goals: 
 
