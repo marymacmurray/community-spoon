@@ -2,11 +2,12 @@ body {
   /*if there was no content in there, height 100%*/
   margin: 0 0;
   display: grid;
-  /* font-family:'Lora', serif; */
   font-family: 'Lato', sans-serif;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 50px;
   width: 100%;
+  background-image:url(../images/dinnerpartyMain2.jpg);
+  align-items: stretch;
 }
 /* header {
   /* grid-column: 1; */
@@ -28,15 +29,15 @@ a{
   text-emphasis: emphasis;
   text-decoration: none;
 }
+
 main{
   grid-template-rows: 25% 75%;
   grid-row-start: 1;
   grid-row-end: 2;
-
 }
+
 #hero-section{
-  background-image:url(../images/hero-image2.jpg);
-  /* background-position: top; */
+  background-image:url(../images/hero-image.jpg);
   background-size: cover;
   grid-row-start: 1;
   grid-row-end: 2;
@@ -53,12 +54,6 @@ main{
 
 }
 article {
-    background-image:url(../images/dinnerpartyMain.jpg);
-    /* background-position: top; */
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-  /* background-color: rgba(25, 119, 25, 0.954); */
   grid-row-start: 2;
   grid-row-end: 3;
   display: grid;
@@ -111,11 +106,17 @@ h2{
 #videoZone{
   grid-row-start: 3;
   grid-row-end: 4;
+  display:grid;
+  grid-template-rows: 2;
+  grid-template-columns: 4;
   text-align: center;
   /* height: 50%; */
 }
 .mealDiv{
 /* margin-bottom: 10px; */
+/* grid-row-start: auto;
+grid-row-end:auto; */
+/* align-items: center; */
 }
 .mealdivTitle{
   margin: 0 auto;
@@ -131,8 +132,9 @@ h2{
 .mealButton{
 background-color: navy;
 color: whitesmoke;
-border-radius: 25%;
+border-radius: 25px;
 margin-bottom: 25px;
+margin: 25px auto;
 }
 a{
   color: white;

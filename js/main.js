@@ -52,12 +52,13 @@ cuisineSelectbutton.addEventListener('click', async () => {
         })
         newDiv.innerHTML =
           `<h1 class="mealdivTitle">${info.data.meals[0].strMeal}</h1><br>
-          <img src="${info.data.meals[0].strMealThumb}" class="mealDivimg" alt="${info.data.meals[0].strMeal} recipe photo" width="300" height="200"><br><a href="${info.data.meals[0].strYoutube}" target="_blank">${info.data.meals[0].strYoutube}</a><br>`
+          <img src="${info.data.meals[0].strMealThumb}" class="mealDivimg" alt="${info.data.meals[0].strMeal} recipe photo" width="300" height="200"><br><a href="${info.data.meals[0].strYoutube}" target="_blank">Check out the recipe!</a><br>`
         //   <h2>${meal.strInstructions}</h2>
         // console.log(newDiv.innerHTML)
 
         document.querySelector("#videoZone").appendChild(newDiv)
         document.querySelector("#videoZone").appendChild(newMealbutton)
+
       })
       // console.log(cuisinedMeals)
     }
