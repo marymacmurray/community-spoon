@@ -53,7 +53,12 @@ main{
 
 }
 article {
-  background-color: rgba(25, 119, 25, 0.954);
+    background-image:url(../images/dinnerpartyMain.jpg);
+    /* background-position: top; */
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+  /* background-color: rgba(25, 119, 25, 0.954); */
   grid-row-start: 2;
   grid-row-end: 3;
   display: grid;
