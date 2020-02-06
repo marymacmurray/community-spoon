@@ -14,7 +14,7 @@ body {
   width: 100%;
 }
 header {
-  grid-column: 1;
+  /* grid-column: 1; */
   grid-row-start:1;
   grid-row-end: 2;
   /* grid-column-start: 1;
@@ -35,6 +35,8 @@ header {
   margin: auto;
   grid-row-start: 1;
   grid-row-end:2;
+  justify-items: center;
+  
   /* grid-column-start: 1;
   grid-column-end:2; */
 }
@@ -59,32 +61,33 @@ main{
   /* display:flex;
   grid-column-start: 1;
   grid-column-end:3;
-  justify-content: center; */ */
+  justify-content: center; */
 }
 #hero-text{
   color:#10166d;
+  font-family: 'Monofett', cursive;
+  font-size: 65px;
+  letter-spacing: 5px;
   margin: 0 auto;
-  font-size: 51px;
   padding: 50px;
   text-align: center;
   /* grid-column-start: 2;
   grid-column-end:3; */
 }
 article {
-  background-color: green;
+  background-color: rgba(25, 119, 25, 0.954);
   grid-row-start: 2;
   grid-row-end: 3;
   display: grid;
   grid-template-columns: 1;
-  grid-template-rows: 50px 1fr;
-  /* grid-column: 1;
-	grid-row: 1; */
-  /* grid-column-start: 1;
-  grid-column-end:3; */
+  grid-template-rows: 50px 300px 1fr;
   text-align: center;
 }
-article:hover {
-  background-color: rgba(128, 124, 124, 0.205);
+h2:hover {
+  text-shadow: 2px 2px 5px yellow;
+}
+section{
+
 }
 h2{
   padding:20px 0;
@@ -94,6 +97,8 @@ h2{
   color: white;
 }
 #userselect{
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
 }
@@ -101,27 +106,44 @@ h2{
   border-radius: 100px;
 }
 #cuisine-select-button{
-  background-color:rgb(8, 148, 66);
+  background-color:rgb(8, 34, 148);
   color: white;
   text-align: center;
+  border-radius: 25%;
 }
 /* #userLocation{
   color: black;
   text-align: center;
 } */
-#cuisine-button{
 
-}
 #videoZone{
   grid-row-start: 3;
   grid-row-end: 4;
   text-align: center;
+  /* height: 50%; */
 }
 .mealDiv{
+/* margin-bottom: 10px; */
+}
+.mealdivTitle{
+  margin: 0 auto;
 }
 .mealDivimg{
   border-radius: 25%;
   border: navy 4px solid;
+  margin-bottom: 10px;
+}
+.mealDivimg:hover{
+  box-shadow: 10px 10px 5px rgb(16, 21, 65);
+}
+.mealButton{
+background-color: navy;
+color: whitesmoke;
+border-radius: 25%;
+margin-bottom: 25px;
+}
+a{
+  color: white;
 }
 .userDiv{
 

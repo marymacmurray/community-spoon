@@ -7,6 +7,7 @@
   <title>community spoon</title>
   <!-- <link href="https://fonts.googleapis.com/css?family=Karla|Lora" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monofett&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="js/main.js"></script>
@@ -18,30 +19,31 @@
   </header>
   <main>
     <section id="hero-section">
-      <h1 id="hero-text">eat,learn,grow</h1>
+      <h1 id="hero-text">community spoon</h1>
     </section>
     <article>
       <section>
         <h1>How it works</h1>
         <p>
-          Time to party! You choose a meal to make and then we'll find other users cooking something to compliment your
-          meal.
+          You choose a meal to cook, we'll build the party.
         </p>
-        <h2>You're ready to party!</h2>
+
       </section>
       <div id="userselect">
+        <h2>Step 1: Need a recipe? Pick a cuisine to get started!</h2>
+        <select id="cuisine">
+        </select>
+        <button id="cuisine-select-button">Step 1</button>
+        <h2>Step 2: Click on "Step 2" below your dish and watch the magic unfold.</h2>
 
         <!-- insert divs here for complimenting dishes, plus 2 random users. -->
 
       </div>
-      <h2>What meal do you want to make? Choose a cuisine to get started!</h2>
 
-      <select id="cuisine">
-      </select>
-      <button id="cuisine-select-button">Find me a recipe!</button>
-      <p>(Click photo for video recipe instructions to open in a new tab)</p>
       <div id="videoZone">
+        <p>(Click link for video recipe instructions to open in a new tab)</p>
       </div>
+
     </article>
   </main>
   <footer>

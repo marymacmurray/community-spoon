@@ -44,17 +44,20 @@ cuisineSelectbutton.addEventListener('click', async () => {
         // console.log(info)
         let newDiv = document.createElement("div")
         newDiv.classList.add("mealDiv")
-        newDiv.addEventListener('click', () => {
+        let newMealbutton = document.createElement("button")
+        newMealbutton.classList.add("mealButton")
+        newMealbutton.innerHTML = "Step 2";
+        newMealbutton.addEventListener('click', () => {
           build3courses(info.data.meals[0], info)
         })
         newDiv.innerHTML =
-          `<h1>${info.data.meals[0].strMeal}</h1>
-          <a href="${info.data.meals[0].strYoutube}" target="_blank">
-          <img src="${info.data.meals[0].strMealThumb}" class="mealDivimg" target="_blank" alt="${meal.strMeal} recipe photo" width="300" height="200"></a>`
+          `<h1 class="mealdivTitle">${info.data.meals[0].strMeal}</h1><br>
+          <img src="${info.data.meals[0].strMealThumb}" class="mealDivimg" alt="${info.data.meals[0].strMeal} recipe photo" width="300" height="200"><br><a href="${info.data.meals[0].strYoutube}" target="_blank">${info.data.meals[0].strYoutube}</a><br>`
         //   <h2>${meal.strInstructions}</h2>
         // console.log(newDiv.innerHTML)
 
         document.querySelector("#videoZone").appendChild(newDiv)
+        document.querySelector("#videoZone").appendChild(newMealbutton)
       })
       // console.log(cuisinedMeals)
     }
