@@ -55,7 +55,7 @@ cuisineSelectbutton.addEventListener('click', async () => {
         newMealbutton.innerHTML = "Step 2";
         newMealbutton.addEventListener('click', () => {
           // console.log(res, info)
-          build2courses(allMealsById, info)
+          buildAllcourses(allMealsById, info)
         })
         newDiv.innerHTML =
           `<h1 class="mealdivTitle">${info.data.meals[0].strMeal}</h1><br>
@@ -78,7 +78,7 @@ allCuisinetypes();
 
 //*****identify selected meal's category, if/else to choose 1 complimentary meal*****/
 
-function build2courses(allMeals, selectedMeal) {
+function buildAllcourses(allMeals, selectedMeal) {
   // console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
   let secondCourse = []
   let dishCategory = selectedMeal.data.meals[0].strCategory//this is the category of the meal they clicked on.
@@ -129,8 +129,44 @@ function build2courses(allMeals, selectedMeal) {
     secondCourse.push(listNotEntree);
   }
   // console.log(secondCourse)
-  return secondCourse
+  const random2ndmeal = secondCourse[0][Math.floor(Math.random() * secondCourse[0].length)];
+  const random3rdmeal = secondCourse[0][Math.floor(Math.random() * secondCourse[0].length)];
+  //console.log(random3rdmeal);
+
+  let firstCoursetitle = `${selectedMeal.data.meals[0].strMeal}`
+  let firstCoursePic = `${selectedMeal.data.meals[0].strMealThumb}`
+
+  const firstCourseMealDiv = document.createElement("div")
+  firstCourseMealDiv.classList.add("mealdiv")
+  firstCourseMealDiv.innerHTML = `<h1 class="mealdivTitle">${firstCoursetitle}</h1><br>
+  <img src="${firstCoursePic}" class="mealDivimg" alt="${firstCoursetitle} recipe photo" width="300" height="200"><br>`
+  document.querySelector("#userselect").appendChild(firstCourseMealDiv)
+
+
+  let secondCoursetitle = `${random2ndmeal.data.meals[0].strMeal}`
+  let secondCoursePic = `${random2ndmeal.data.meals[0].strMealThumb}`
+
+
+  const secondCourseMealDiv = document.createElement("div")
+  secondCourseMealDiv.classList.add("mealdiv")
+  secondCourseMealDiv.innerHTML = `<h1 class="mealdivTitle">${secondCoursetitle}</h1><br>
+  <img src="${secondCoursePic}" class="mealDivimg" alt="${secondCoursetitle} recipe photo" width="300" height="200"><br>`
+  document.querySelector("#userselect").appendChild(secondCourseMealDiv)
+
+
+  let thirdCoursetitle = `${random3rdmeal.data.meals[0].strMeal}`
+  let thirdCoursePic = `${random3rdmeal.data.meals[0].strMealThumb}`
+
+  const thirdCourseMealDiv = document.createElement("div")
+  thirdCourseMealDiv.classList.add("mealdiv")
+  thirdCourseMealDiv.innerHTML = `<h1 class="mealdivTitle">${thirdCoursetitle}</h1><br>
+  <img src="${thirdCoursePic}" class="mealDivimg" alt="${thirdCoursetitle} recipe photo" width="300" height="200"><br>`
+  document.querySelector("#userselect").appendChild(thirdCourseMealDiv)
+
+
+
 }
+
 
 
 
