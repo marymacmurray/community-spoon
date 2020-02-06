@@ -38,15 +38,17 @@ main{
 
 #hero-section{
   background-image:url(../images/hero-image.jpg);
+  border: black 5px;
   background-size: cover;
   grid-row-start: 1;
   grid-row-end: 2;
 
 }
 #hero-text{
-  color:#10166d;
+  color:rgb(239, 238, 240);
+  background-color: rgba(128, 128, 128, 0.652);
   font-family: 'Monofett', cursive;
-  font-size: 65px;
+  font-size: 85px;
   letter-spacing: 5px;
   margin: 0 auto;
   padding: 50px;

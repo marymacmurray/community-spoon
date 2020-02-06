@@ -23,6 +23,7 @@ let allCuisinetypes = async () => {
 }
 allCuisinetypes();
 
+//****.map feeds each individual axios call by ID******** */
 
 const getMealbyId = async (id) => {
   let mealResponse =
@@ -31,16 +32,21 @@ const getMealbyId = async (id) => {
   // console.log(mealResponse);
 }
 
-cuisineSelectbutton.addEventListener('click', async () => {
 
+//***Main Event Listener: Category (aka cuisine type) -> Meal -> Complimentary Meal of same category + Random user***/
+
+cuisineSelectbutton.addEventListener('click', async () => {
+  let allMealsById = []
   const cuisineTypeSelected = cuisineDropdown[cuisineDropdown.selectedIndex].value;
   // console.log(cuisineTypeSelected);
   let response = await axios.get(`${MEALSDB_URL}${MEALSDB_API_KEY}filter.php?a=${cuisineTypeSelected}`)
     .then(meals => {
       let res = meals.data.meals
+      console.log(res)
       let cuisinedMeals = res.map(async (meal) => {
         // console.log(meal.idMeal)
         let info = await getMealbyId(meal.idMeal)
+        allMealsById.push(info)
         // console.log(info)
         let newDiv = document.createElement("div")
         newDiv.classList.add("mealDiv")
@@ -48,7 +54,8 @@ cuisineSelectbutton.addEventListener('click', async () => {
         newMealbutton.classList.add("mealButton")
         newMealbutton.innerHTML = "Step 2";
         newMealbutton.addEventListener('click', () => {
-          build3courses(info.data.meals[0], info)
+          console.log(res, info)
+          build3courses(allMealsById, info)
         })
         newDiv.innerHTML =
           `<h1 class="mealdivTitle">${info.data.meals[0].strMeal}</h1><br>
@@ -69,31 +76,60 @@ cuisineSelectbutton.addEventListener('click', async () => {
 )
 allCuisinetypes();
 
-//*****identify selected meal category, if/else to choose complimentary meal photos*****/
+//*****identify selected meal's category, if/else to choose complimentary meal photos*****/
 
-function build3courses(selectedMeal, info) {
-  // console.log(selectedMeal);
-  if (selectedMeal.strCategory === "Dessert")//Dessert
+function build3courses(allMeals, selectedMeal) {
+  console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
+  let dishCategory = selectedMeal.data.meals[0].strCategory//this is the category of the meal they clicked on.
+  console.log(dishCategory)
+  if (dishCategory === "Dessert")//Dessert: If category of dish they click on is Dessert, grab all objects in allMeals array that are NOT Dessert.
   {
-    const listNotdessert = info.filter(meal => info.strCategory !== "Dessert");
-    console.log(listNotdessert);
+    const listNotdessert = allMeals.filter(meal => {
+      if (meal.data.meals[0].strCategory !== "Dessert") {
+        // console.log(meal.data.meals[0].strCategory)
+        return meal
+      }
+    })
+    console.log(listNotdessert)
   }
-  else if (selectedMeal.strCategory === "Starter" || selectedMeal.strCategory === "Side")  //Appetizer
+
+  else if (dishCategory === "Starter" || dishCategory === "Side")//Starter: If category of dish they click on is Starter, grab all objects in allMeals array that are NOT Starter.
   {
-    const listNotstarter = info.filter(meal => info.strCategory !== "Starter");
-    console.log(listNotstarter);
+    const listNotstarter = allMeals.filter(meal => {
+      if (meal.data.meals[0].strCategory !== "Starter" || meal.data.meals[0].strCategory !== "Side") {
+        // console.log(meal.data.meals[0].strCategory)
+        return meal
+      }
+    })
+    console.log(listNotstarter)
   }
-  else if (selectedMeal.strCategory === "Breakfast")//Breakfast
+
+  else if (dishCategory === "Breakfast")//Breakfast: If category of dish they click on is Breakfast, grab all objects in allMeals array that are Breakfast.
   {
-    const listIsbreakfast = info.filter(meal => info.strCategory === "Breakfast");
-    console.log(listIsbreakfast);
+    const listBreakfast = allMeals.filter(meal => {
+      if (meal.data.meals[0].strCategory === "Breakfast") {
+        // console.log(meal.data.meals[0].strCategory)
+        return meal
+      }
+    })
+    console.log(listBreakfast)
   }
+
   else {
-    const listNotEntree = info.filter(meal => info.strCategory !== "Beef" || info.strCategory !== "Chicken" || info.strCategory !== "Goat" || info.strCategory !== "Lamb" || info.strCategory !== "Miscellaneous" || info.strCategory !== "Pasta" || info.strCategory !== "Pork" || info.strCategory !== "Seafood" || info.strCategory !== "Vegan" || info.strCategory !== "Vegetarian");
-    console.log(listNotEntree);
-  };
-  return build3courses();
+    const listNotEntree = allMeals.filter(meal => { //If Entree, list all other meals not Entree.
+      if (meal.data.meals[0].strCategory !== "Beef" || meal.data.meals[0].strCategory !== "Chicken" || meal.data.meals[0].strCategory !== "Goat" || meal.data.meals[0].strCategory !== "Lamb" || meal.data.meals[0].strCategory !== "Miscellaneous" || meal.data.meals[0].strCategory !== "Pasta" || meal.data.meals[0].strCategory !== "Pork" || meal.data.meals[0].strCategory !== "Seafood" || meal.data.meals[0].strCategory !== "Vegan" || meal.data.meals[0].strCategory !== "Vegetarian")
+        // console.log(meal.data.meals[0].strCategory)
+        return meal
+    }
+    )
+    console.log(listNotEntree)
+  }
+
 }
+// console.log(build3courses(allMeals, selectedMeal));
+
+
+
 //******This is the list of strCategory values from the API, these are like dish types.*** */
     // "strCategory": "Breakfast"
 
