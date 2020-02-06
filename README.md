@@ -2,16 +2,16 @@
 
 
 ## Description
-Generate users based on location who can bring appetizers, entrees, and desserts to build a dinner party.
+Select a meal recipe to cook. Based on the selection, generate complimentary dishes that other users are cooking so a 3-course meal is assembled.
 
 ## Wireframes
 
 ### mobile
-![this is my mobile mockup](mockups/community-spoon-flowmap.png)
+![this is my preliminary mobile mockup](mockups/community-spoon-flowmap.png)
 ### tablet
-![this is my tablet mockup](mockups/community-spoon-laptop-flowmap.png)
+![this is my preliminary tablet mockup](mockups/community-spoon-laptop-flowmap.png)
 ### web
-![this is my tablet mockup](mockups/community-spoon-tablet-flowmap.png)
+![this is my preliminary tablet mockup](mockups/community-spoon-tablet-flowmap.png)
 
 ## mvp goals
 
@@ -27,34 +27,24 @@ Procedural Requirements
 * Have a well-developed README.md file explaining technologies used, approaches taken, a link to my live site, relevant instructions for viewers, and any unsolved problems.
 
 ## API: 
-https://randomuser.me/api/?
+https://www.themealdb.com/api/json/v2
 
 ## post-mvp goals: 
 
 * Fancier use of grid. 
-* Add 2 more APIs to enable search by cuisine or food.  "Need ideas for what's in your fridge?" then addeventlistener with dropdown based on food string or cuisine string.
-* Eventually (perhaps not in the scope of this course) I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users in the app, building a 3-course meal based on what people can bring and their dietary preferences/location.  This would require login, test users, etc.  
-
-# TO DO!
-<!-- Task List -->
-* [x] Choose API data source
-* [x] Create Mockup
-* [ ]  Refine CSS
+* Add 1 more API to enable search by cuisine or food.  "Need ideas for what's in your fridge?" then addeventlistener with dropdown based on food string or cuisine string.  
+https://randomuser.me/api/?
+* Eventually (perhaps not in the scope of this course) I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users cooking meals, building a 3-course meal based on what people can bring and their dietary preferences/location.  This would require login, test users, etc.  Plus additional API integrations.
 
 ## technologies used
 * vanilla javascript
 * axios
 * html5
-* css
+* css grid
 
 
 
 #### relevant instructions for viewers
 
 ##### wip
-​
-| to do                | doing          |  done          |
-| -------------------- | -------------- | -------------- |
-| put something in here|                |                |
-|                      |                |                |
 ​
