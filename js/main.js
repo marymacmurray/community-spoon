@@ -54,8 +54,8 @@ cuisineSelectbutton.addEventListener('click', async () => {
         newMealbutton.classList.add("mealButton")
         newMealbutton.innerHTML = "Step 2";
         newMealbutton.addEventListener('click', () => {
-          console.log(res, info)
-          build3courses(allMealsById, info)
+          // console.log(res, info)
+          build2courses(allMealsById, info)
         })
         newDiv.innerHTML =
           `<h1 class="mealdivTitle">${info.data.meals[0].strMeal}</h1><br>
@@ -76,21 +76,23 @@ cuisineSelectbutton.addEventListener('click', async () => {
 )
 allCuisinetypes();
 
-//*****identify selected meal's category, if/else to choose complimentary meal photos*****/
+//*****identify selected meal's category, if/else to choose 1 complimentary meal*****/
 
-function build3courses(allMeals, selectedMeal) {
-  console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
+function build2courses(allMeals, selectedMeal) {
+  // console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
+  let secondCourse = []
   let dishCategory = selectedMeal.data.meals[0].strCategory//this is the category of the meal they clicked on.
-  console.log(dishCategory)
+  // console.log(dishCategory)
   if (dishCategory === "Dessert")//Dessert: If category of dish they click on is Dessert, grab all objects in allMeals array that are NOT Dessert.
   {
     const listNotdessert = allMeals.filter(meal => {
       if (meal.data.meals[0].strCategory !== "Dessert") {
         // console.log(meal.data.meals[0].strCategory)
-        return meal
+        return meal;
       }
     })
-    console.log(listNotdessert)
+    // console.log(listNotdessert)
+    secondCourse.push(listNotdessert);
   }
 
   else if (dishCategory === "Starter" || dishCategory === "Side")//Starter: If category of dish they click on is Starter, grab all objects in allMeals array that are NOT Starter.
@@ -101,7 +103,8 @@ function build3courses(allMeals, selectedMeal) {
         return meal
       }
     })
-    console.log(listNotstarter)
+    // console.log(listNotstarter)
+    secondCourse.push(listNotstarter);
   }
 
   else if (dishCategory === "Breakfast")//Breakfast: If category of dish they click on is Breakfast, grab all objects in allMeals array that are Breakfast.
@@ -112,7 +115,8 @@ function build3courses(allMeals, selectedMeal) {
         return meal
       }
     })
-    console.log(listBreakfast)
+    // console.log(listBreakfast)
+    secondCourse.push(listBreakfast);
   }
 
   else {
@@ -120,19 +124,23 @@ function build3courses(allMeals, selectedMeal) {
       if (meal.data.meals[0].strCategory !== "Beef" || meal.data.meals[0].strCategory !== "Chicken" || meal.data.meals[0].strCategory !== "Goat" || meal.data.meals[0].strCategory !== "Lamb" || meal.data.meals[0].strCategory !== "Miscellaneous" || meal.data.meals[0].strCategory !== "Pasta" || meal.data.meals[0].strCategory !== "Pork" || meal.data.meals[0].strCategory !== "Seafood" || meal.data.meals[0].strCategory !== "Vegan" || meal.data.meals[0].strCategory !== "Vegetarian")
         // console.log(meal.data.meals[0].strCategory)
         return meal
-    }
-    )
-    console.log(listNotEntree)
+    })
+    // console.log(listNotEntree)
+    secondCourse.push(listNotEntree);
   }
-
+  // console.log(secondCourse)
+  return secondCourse
 }
-// console.log(build3courses(allMeals, selectedMeal));
+
 
 
 
 //******This is the list of strCategory values from the API, these are like dish types.*** */
     // "strCategory": "Breakfast"
 
+    // "strCategory": "Dessert"
+
+    //**ENTREES** */
     // "strCategory": "Beef"
     // "strCategory": "Chicken"
     // "strCategory": "Goat"
@@ -144,10 +152,10 @@ function build3courses(allMeals, selectedMeal) {
     // "strCategory": "Vegan"
     // "strCategory": "Vegetarian"
 
+    //**APPETIZER** */
     // "strCategory": "Side"
     // "strCategory": "Starter"
 
-  // "strCategory": "Dessert"
 
 //********Hard code randomuser photos and name******/
 

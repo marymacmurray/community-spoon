@@ -42,11 +42,10 @@ main{
   background-size: cover;
   grid-row-start: 1;
   grid-row-end: 2;
-
 }
 #hero-text{
   color:rgb(239, 238, 240);
-  background-color: rgba(128, 128, 128, 0.652);
+  background-color: rgba(1, 0, 0, 0.385);
   font-family: 'Monofett', cursive;
   font-size: 85px;
   letter-spacing: 5px;
@@ -60,15 +59,18 @@ article {
   grid-row-end: 3;
   display: grid;
   grid-template-columns: 1;
-  grid-template-rows: 50px 300px 1fr;
+  grid-template-rows: 200px 300px 1fr;
   text-align: center;
 }
-
+p{
+  margin: auto;
+}
 h2:hover {
   text-shadow: 2px 2px 5px yellow;
 }
 section{
-
+background-color: rgba(31, 30, 30, 0.474);
+margin: 5px;
 }
 h2{
   padding:20px 0;
