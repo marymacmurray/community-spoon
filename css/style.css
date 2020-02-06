@@ -1,13 +1,15 @@
 body {
   /*if there was no content in there, height 100%*/
-  margin: 0 0;
+  align-items: stretch;
+  background-image:url(../images/dinnerpartyMain2.jpg);
   display: grid;
   font-family: 'Lato', sans-serif;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 50px;
+  margin: 0 0;
+  
   width: 100%;
-  background-image:url(../images/dinnerpartyMain2.jpg);
-  align-items: stretch;
+
 }
 /* header {
   /* grid-column: 1; */
@@ -112,9 +114,15 @@ h2{
   grid-row-end: 4;
   display:grid;
   grid-template-rows: 2;
-  grid-template-columns: 4;
   text-align: center;
   /* height: 50%; */
+}
+.finalDiv{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display:grid;
+  grid-template-rows: 2;
+  text-align: center;
 }
 .mealDiv{
 /* margin-bottom: 10px; */
