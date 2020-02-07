@@ -70,7 +70,7 @@ p{
 h2:hover {
   text-shadow: 2px 2px 5px yellow;
 }
-section{
+#howItworks{
 background-color: rgba(31, 30, 30, 0.474);
 margin: 5px;
 }
@@ -90,22 +90,28 @@ h2{
 #userImg{
   border-radius: 100px;
 }
+#cuisine{
+  font-size: 18px;
+}
 #cuisine-select-button{
   background-color:rgb(8, 34, 148);
   color: white;
   text-align: center;
-  border-radius: 25%;
+  border-radius: 25px;
+  font-size: 18px;
 }
-/* #userLocation{
-  color: black;
-  text-align: center;
-} */
-/* .userDiv{
 
+.userDiv{
+ display:flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
 }
 .userDivimg{
-
-} */
+  border-radius: 50%;
+  border: navy 4px solid;
+  margin-bottom: 10px;
+}
 
 /******Recipe DOM elements******/
 
@@ -125,13 +131,14 @@ h2{
   text-align: center;
 }
 .mealDiv{
-/* margin-bottom: 10px; */
+margin-bottom: 10px;
 /* grid-row-start: auto;
 grid-row-end:auto; */
 /* align-items: center; */
 }
 .mealdivTitle{
-  margin: 0 auto;
+  margin: 10px auto;
+  font-size: 40px;
 }
 .mealDivimg{
   border-radius: 25%;
@@ -145,8 +152,8 @@ grid-row-end:auto; */
 background-color: navy;
 color: whitesmoke;
 border-radius: 25px;
-margin-bottom: 25px;
 margin: 25px auto;
+font-size: 30px;
 }
 a{
   color: white;
