@@ -101,12 +101,12 @@ h2{
   font-size: 18px;
 }
 
-.userDiv{
+/* .userDiv{
  display:flex;
  flex-direction: row;
  flex-wrap: wrap;
  justify-content: center;
-}
+} */
 .userDivimg{
   border-radius: 50%;
   border: navy 4px solid;

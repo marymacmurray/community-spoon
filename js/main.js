@@ -75,35 +75,34 @@ cuisineSelectbutton.addEventListener('click', async () => {
 )
 allCuisinetypes();
 
-//********Grab randomuser photos and name******/
-
-const randomUser_BASE_URL = 'https://randomuser.me/api/?results=2&?inc=name,location,picture';
-const userDisplay = document.querySelector(".finalDiv");
-
-for (let i = 0; i < 2; i++) {
-  let randomuser = async () => {
-    await axios.get(`${randomUser_BASE_URL}`)
-      .then(res => {
-        console.log(res);
-        let user = res.data.results[0];
-        let userDiv = document.createElement("div")
-        // console.log(userDiv);
-        userDiv.classList.add("userDiv")
-        userDiv.innerHTML =
-          `<h1>"${user.name.first}</h1><img src="${user.picture.large}" class="userDivimg" target="_blank" alt="$user photo" width="300" height="200">`
-        document.querySelector("article").appendChild(userDiv)
-      })
-      .catch(error => {
-        console.log(error);
-      })
-  }
-  randomuser();
-}
-
 //*****identify selected meal's category, if/else to choose 1 complimentary meal*****/
 
 function buildAllcourses(allMeals, selectedMeal) {
   // console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
+  //********Grab randomuser photos and name******/
+
+  const randomUser_BASE_URL = 'https://randomuser.me/api/?results=2&?inc=name,location,picture';
+  const userDisplay = document.querySelector("article");
+
+  for (let i = 0; i < 2; i++) {
+    let randomuser = async () => {
+      await axios.get(`${randomUser_BASE_URL}`)
+        .then(res => {
+          console.log(res);
+          let user = res.data.results[0];
+          let userDiv = document.createElement("div")
+          // console.log(userDiv);
+          userDiv.classList.add("userDiv")
+          userDiv.innerHTML =
+            `<h1>"${user.name.first}</h1><img src="${user.picture.large}" class="userDivimg" target="_blank" alt="$user photo" width="300" height="200">`
+          document.querySelector("article").appendChild(userDiv)
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+    randomuser();
+  }
 
   let node = document.getElementById("videoZone");
   if (node.parentNode) {
@@ -115,16 +114,11 @@ function buildAllcourses(allMeals, selectedMeal) {
     node2.parentNode.removeChild(node2);
   }
 
-  const finalDivsection = document.createElement("div")
-  finalDivsection.classList.add("finalDiv")
   const finalDivtitle = document.createElement("h2")
   finalDivtitle.classList.add("finalDivTitle")
 
   document.querySelector("article").prepend(finalDivtitle)
-  finalDivtitle.innerText = "You have arrived!  Meet your dinner party below:";
-
-  document.querySelector("article").appendChild(finalDivsection)
-
+  finalDivtitle.innerText = "You have arrived!  Check out your 3-course meal, and meet your dinner party guests below:";
 
 
   let secondCourse = []
@@ -191,7 +185,7 @@ function buildAllcourses(allMeals, selectedMeal) {
   firstCourseMealDiv.classList.add("mealDiv")
   firstCourseMealDiv.innerHTML = `<h1 class="mealdivTitle">${firstCoursetitle}</h1><br>
   <img src="${firstCoursePic}" class="mealDivimg" alt="${firstCoursetitle} recipe photo" width="300" height="200"><br><a href="${firstCoursevid}" target="_blank">Check out the recipe!</a><br>`
-  document.querySelector(".finalDiv").appendChild(firstCourseMealDiv)
+  document.querySelector("article").appendChild(firstCourseMealDiv)
 
 
   let secondCoursetitle = `${random2ndmeal.data.meals[0].strMeal}`
@@ -202,7 +196,7 @@ function buildAllcourses(allMeals, selectedMeal) {
   secondCourseMealDiv.classList.add("mealDiv")
   secondCourseMealDiv.innerHTML = `<h1 class="mealdivTitle">${secondCoursetitle}</h1><br>
   <img src="${secondCoursePic}" class="mealDivimg" alt="${secondCoursetitle} recipe photo" width="300" height="200"><br>`
-  document.querySelector(".finalDiv").appendChild(secondCourseMealDiv)
+  document.querySelector("article").appendChild(secondCourseMealDiv)
 
 
   let thirdCoursetitle = `${random3rdmeal.data.meals[0].strMeal}`
@@ -212,7 +206,7 @@ function buildAllcourses(allMeals, selectedMeal) {
   thirdCourseMealDiv.classList.add("mealDiv")
   thirdCourseMealDiv.innerHTML = `<h1 class="mealdivTitle">${thirdCoursetitle}</h1><br>
   <img src="${thirdCoursePic}" class="mealDivimg" alt="${thirdCoursetitle} recipe photo" width="300" height="200"><br>`
-  document.querySelector(".finalDiv").appendChild(thirdCourseMealDiv)
+  document.querySelector("article").appendChild(thirdCourseMealDiv)
 
   let node3 = document.getElementById("howItworks");
   if (node3.parentNode) {

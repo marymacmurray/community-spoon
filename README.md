@@ -2,16 +2,16 @@
 
 
 ## Description
-Select a meal recipe to cook. Based on the selection, generate complimentary dishes that other users are cooking so a 3-course meal is assembled.
+Select a meal recipe to cook. Based on the selection, the app generates complimentary dishes of that cuisine nationality that other users are cooking so a 3-course meal is assembled.
 
 ## Wireframes
 
 ### mobile
-![this is my preliminary mobile mockup](mockups/community-spoon-flowmap.png)
+![this was my preliminary mobile mockup](mockups/community-spoon-flowmap.png)
 ### tablet
-![this is my preliminary tablet mockup](mockups/community-spoon-laptop-flowmap.png)
+![this was my preliminary tablet mockup](mockups/community-spoon-laptop-flowmap.png)
 ### web
-![this is my preliminary tablet mockup](mockups/community-spoon-tablet-flowmap.png)
+![this was my preliminary tablet mockup](mockups/community-spoon-tablet-flowmap.png)
 
 ## mvp goals
 
@@ -26,8 +26,9 @@ Procedural Requirements
 * Have GitHub commits (documenting good progress) every day.
 * Have a well-developed README.md file explaining technologies used, approaches taken, a link to my live site, relevant instructions for viewers, and any unsolved problems.
 
-## API: 
-https://www.themealdb.com/
+## api: 
+https://www.themealdb.com/ 
+https://randomuser.me/api/?
 
 ## post-mvp goals: 
 
