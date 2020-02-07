@@ -18,7 +18,7 @@ Select a meal recipe to cook. Based on the selection, the app generates complime
 Functional Requirements
 * Be built with HTML, CSS, and JavaScript.
 * Use Axios to consume data from an external source, and render that data into the DOM.
-* Use flexbox (display: flex) or grid.
+* Use flexbox or grid.
 * Implement responsive design on 3 screen sizes (including desktop) using 2 media queries (tablet and mobile).
 * Host on Surge.
 

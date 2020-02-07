@@ -55,6 +55,11 @@ cuisineSelectbutton.addEventListener('click', async () => {
         newMealbutton.innerHTML = "Onward to Step 2!";
         newMealbutton.addEventListener('click', () => {
           // console.log(res, info)
+          const finalDivtitle = document.createElement("h2")
+          finalDivtitle.classList.add("finalDivTitle")
+          document.querySelector("article").prepend(finalDivtitle)
+          finalDivtitle.innerText = "You have arrived!  Check out your 3-course meal, and meet your party guests.";
+
           buildAllcourses(allMealsById, info)
         })
         newDiv.innerHTML =
@@ -79,6 +84,7 @@ allCuisinetypes();
 
 function buildAllcourses(allMeals, selectedMeal) {
   // console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
+
   //********Grab randomuser photos and name******/
 
   const randomUser_BASE_URL = 'https://randomuser.me/api/?results=2&?inc=name,location,picture';
@@ -94,8 +100,8 @@ function buildAllcourses(allMeals, selectedMeal) {
           // console.log(userDiv);
           userDiv.classList.add("userDiv")
           userDiv.innerHTML =
-            `<h1>"${user.name.first}</h1><img src="${user.picture.large}" class="userDivimg" target="_blank" alt="$user photo" width="300" height="200">`
-          document.querySelector("article").appendChild(userDiv)
+            `<h1>${user.name.first}</h1><img src="${user.picture.large}" class="userDivimg" target="_blank" alt="$user photo" width="300" height="200">`
+          document.querySelector("article").prepend(userDiv)
         })
         .catch(error => {
           console.log(error);
@@ -113,13 +119,6 @@ function buildAllcourses(allMeals, selectedMeal) {
   if (node2.parentNode) {
     node2.parentNode.removeChild(node2);
   }
-
-  const finalDivtitle = document.createElement("h2")
-  finalDivtitle.classList.add("finalDivTitle")
-
-  document.querySelector("article").prepend(finalDivtitle)
-  finalDivtitle.innerText = "You have arrived!  Check out your 3-course meal, and meet your dinner party guests below:";
-
 
   let secondCourse = []
   let dishCategory = selectedMeal.data.meals[0].strCategory//this is the category of the meal they clicked on.
@@ -175,7 +174,7 @@ function buildAllcourses(allMeals, selectedMeal) {
   //console.log(random3rdmeal);
 
 
-  //*******Adding the 3 course dinner party to the page******* */
+  //*******Adding the 3 courses and dinner party to the page******* */
 
   let firstCoursetitle = `${selectedMeal.data.meals[0].strMeal}`
   let firstCoursePic = `${selectedMeal.data.meals[0].strMealThumb}`
