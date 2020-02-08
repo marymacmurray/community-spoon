@@ -1,4 +1,4 @@
-//**************Axios call to get Meals by Cuisine Type (soooo many endpoints in mealsdb API, OY VEY)************** */
+//**************Axios call to get Meals by Cuisine Type, like British etc (soooo many endpoints in mealsdb API, OY VEY)************** */
 
 const cuisineDropdown = document.querySelector('#cuisine');
 const cuisineSelectbutton = document.querySelector('#cuisine-select-button')
