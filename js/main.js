@@ -1,4 +1,4 @@
-//**************Click event listener generating list of Meals by Cuisine Type************** */
+//**************Axios call to get Meals by Cuisine Type (soooo many endpoints in mealsdb API, OY VEY)************** */
 
 const cuisineDropdown = document.querySelector('#cuisine');
 const cuisineSelectbutton = document.querySelector('#cuisine-select-button')
@@ -33,7 +33,7 @@ const getMealbyId = async (id) => {
 }
 
 
-//***Main Event Listener: Category (aka cuisine type) -> Meal -> Complimentary Meal of same category + Random user***/
+//***Main Event Listener: Category (aka cuisine type) -> Meal endpoint -> complimentary meal of same category + Random user***/
 
 cuisineSelectbutton.addEventListener('click', async () => {
   let allMealsById = []
@@ -60,7 +60,7 @@ cuisineSelectbutton.addEventListener('click', async () => {
           document.querySelector("article").prepend(finalDivtitle)
           finalDivtitle.innerText = "You have arrived!  Check out your 3-course meal, and meet your party guests.";
 
-          buildAllcourses(allMealsById, info)
+          buildAllcourses(allMealsById, info) . //
         })
         newDiv.innerHTML =
           `<h1 class="mealdivTitle">${info.data.meals[0].strMeal}</h1><br>
@@ -80,7 +80,7 @@ cuisineSelectbutton.addEventListener('click', async () => {
 )
 allCuisinetypes();
 
-//*****identify selected meal's category, if/else to choose 1 complimentary meal*****/
+//*****identify selected meal's category, if/else to choose 2 complimentary meals*****/
 
 function buildAllcourses(allMeals, selectedMeal) {
   // console.log(allMeals, selectedMeal)//allMeals is the new array allMealsbyId of that nationality (aka cuisine type, aka strArea)
@@ -122,6 +122,7 @@ function buildAllcourses(allMeals, selectedMeal) {
 
   let secondCourse = []
   let dishCategory = selectedMeal.data.meals[0].strCategory//this is the category of the meal they clicked on.
+  //looking at this now, i should have refactored meal.data.meals[0].strCategory and stored as a variable too.  Doh!
   // console.log(dishCategory)
   if (dishCategory === "Dessert")//Dessert: If category of dish they click on is Dessert, grab all objects in allMeals array that are NOT Dessert.
   {
@@ -160,7 +161,7 @@ function buildAllcourses(allMeals, selectedMeal) {
   }
 
   else {
-    const listNotEntree = allMeals.filter(meal => { //If Entree, list all other meals not Entree.
+    const listNotEntree = allMeals.filter(meal => { //If Entree, list all other meals not Entree.  
       if (meal.data.meals[0].strCategory !== "Beef" || meal.data.meals[0].strCategory !== "Chicken" || meal.data.meals[0].strCategory !== "Goat" || meal.data.meals[0].strCategory !== "Lamb" || meal.data.meals[0].strCategory !== "Miscellaneous" || meal.data.meals[0].strCategory !== "Pasta" || meal.data.meals[0].strCategory !== "Pork" || meal.data.meals[0].strCategory !== "Seafood" || meal.data.meals[0].strCategory !== "Vegan" || meal.data.meals[0].strCategory !== "Vegetarian")
         // console.log(meal.data.meals[0].strCategory)
         return meal
@@ -169,14 +170,14 @@ function buildAllcourses(allMeals, selectedMeal) {
     secondCourse.push(listNotEntree);
   }
   // console.log(secondCourse)
-  const random2ndmeal = secondCourse[0][Math.floor(Math.random() * secondCourse[0].length)];
+  const random2ndmeal = secondCourse[0][Math.floor(Math.random() * secondCourse[0].length)];  //lazy! i could have looped through this and done a true comparison to make sure each of the 3 meals was unique and you truly got 1 side/starter, 1 entree, 1 dessert... but I started this later than i had planned to since it was my post mvp stuff.  was tired by this time.  so...math.random() *sigh*
   const random3rdmeal = secondCourse[0][Math.floor(Math.random() * secondCourse[0].length)];
   //console.log(random3rdmeal);
 
 
-  //*******Adding the 3 courses and dinner party to the page******* */
+  //*******Adding the 3 courses and dinner party guests to the page via the DOM******* */
 
-  let firstCoursetitle = `${selectedMeal.data.meals[0].strMeal}`
+  let firstCoursetitle = `${selectedMeal.data.meals[0].strMeal}` . //should have used the variable above i created...doh.
   let firstCoursePic = `${selectedMeal.data.meals[0].strMealThumb}`
   let firstCoursevid = `${selectedMeal.data.meals[0].strYoutube}`
 
