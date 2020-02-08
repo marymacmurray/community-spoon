@@ -23,7 +23,7 @@ let allCuisinetypes = async () => {
 }
 allCuisinetypes();
 
-//****.map feeds each individual axios call by ID******** */
+//****.map requires accessing another endpoint for each mealID.  Grr, limitations of the API.******** */
 
 const getMealbyId = async (id) => {
   let mealResponse =
