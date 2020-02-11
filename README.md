@@ -1,4 +1,4 @@
-# community-spoon [app link](http://community-spoon.surge.sh/)
+# [community spoon](http://community-spoon.surge.sh/)
 
 
 ## Description
