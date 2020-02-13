@@ -28,12 +28,13 @@ Procedural Requirements
 
 ## api: 
 https://www.themealdb.com/ 
+
 https://randomuser.me/api/?
 
 ## post-mvp goals: 
 
 * Fancier use of grid. 
-* Add 1 more API to enable search by cuisine or food.  "Need ideas for what's in your fridge?" then addeventlistener with dropdown based on food string or cuisine string.  
+[x] Add 1 more API to enable search by cuisine or food.  "Need ideas for what's in your fridge?" then addeventlistener with dropdown based on food string or cuisine string.  
 https://randomuser.me/api/?
 * Eventually (perhaps not in the scope of this course) I would like Community Spoon to be similar to if meetup.com and airbnb had a baby.  You search in your area for users cooking meals, building a 3-course meal based on what people can bring and their dietary preferences/location.  This would require login, test users, etc.  Plus additional API integrations.
 
@@ -48,4 +49,8 @@ https://randomuser.me/api/?
 #### relevant instructions for viewers
 
 ##### wip
-​
+* refactor and examine for recursion opps
+* UX
+* Remove buttons and make images links
+* Style a modal for first visit to the site w the value prop.
+
